@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>myStore</title>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="header">
+            <div class="container">
+                myStore
+            </div>
+        </div>
+        <div class="container">
+            <div class="product">
+                <div class="product-img">
+                    <img :src="image" />
+                </div>
+                <div class="product-info">
+                    <p class="cart">Cart: {{cart}}</p>
+                    <h2>{{title}}</h2>
+                    <p v-if="inventory > 10">In Stock</p>
+                    <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
+                    <p v-else>Out of Stock</p>
+                    <div class="size">
+                        <h4>Size:</h4>
+                        <p v-for="variant in variants">{{variant.variantsSize}}</p>
+                    </div>
+                    <div class="color">
+                        <h4>Color:</h4>
+                        <p v-for="(variant, index) in variants" 
+                            :style="{ backgroundColor: variant.variantsColor }" 
+                            @mouseover="updateProduct(index)">
+                        </p>
+                    </div>
+                    <button @click="addToCart"
+                            :disabled="inventory == 0"
+                            :class="{ disabledButton: inventory == 0 }">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- javascript -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

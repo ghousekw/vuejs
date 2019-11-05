@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+img {
+    height: 400px;
+    width: 300px;
+}
+
+.container{
+    max-width: 900px;
+    margin: 0px auto;
+    padding: 20px 0;
+}
+
+.header{
+    background: #0a2b4e;
+    color: #fff;
+    font-size: 30px;
+}
+.product{
+    position: relative;
+}
+.product-img{
+    position: absolute;
+    float: left;
+    left: 0px;
+    border: .1px solid #ccc;
+    padding: 30px;
+}
+.product-info{
+    position: absolute;
+    top: 20px;
+    left: 380px;
+    padding: 20px;
+    font-weight: 500;
+}
+.product-info .size p{
+    margin: 20px 10px;
+    display: inline-block;
+    padding: 10px;
+    background: turquoise;
+}
+
+.product-info .color p{
+    margin: 20px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: turquoise;
+}
+
+button{
+    background-color: #1e95ea;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.disabledButton{
+    background-color: #d8d8d8;
+}
+[v-cloak]{
+    display: none;
+}
